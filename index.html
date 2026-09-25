@@ -1,0 +1,92 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="globals.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="canvas-shell">
+<div class="snap-point snap-preview" aria-hidden="true"></div>
+<div class="snap-point snap-about" aria-hidden="true"></div>
+<div class="snap-point snap-works" aria-hidden="true"></div>
+<div class="snap-point snap-contact" aria-hidden="true"></div>
+<div class="desktop"><img class="rectangle" src="img/Rectangle 2.png" />
+<img class="line" src="img/Line 1.png"/>
+<img class="PREVIEW" src="img/PREVIEW.png" />
+<img class="img" src="img/PREVIEW-1.png" />
+<img class="img-2" src="img/Blalalalalalalal Lorem ipsum.png" />
+<img class="line-2" src="img/Line 2.png" />
+<img class="plant" src="img/plant1 1.png" />
+<img class="plant-2" src="img/plant2 1.png" />
+<img class="hero" src="img/Hero1 1.png" />
+<img class="about" src="img/About bar1.png" />
+<img class="smol" src="img/Smol-1.png" />
+<img class="smol-2" src="img/Smol.png" />
+<img class="img-3" src="img/Contact.png" />
+<img class="img-4" src="img/Blalalalalalalal Lorem ipsum-1.png" />
+<img class="lorem-ipsuummm" src="img/lorem ipsuummm.png" />
+<img class="about-2" src="img/About-2.png" />
+<img class="ABOUT" src="img/ABOUT.png" />
+<img class="rectangle-2" src="img/Rectangle 3.png" />
+<img class="img-5" src="img/Blalalalalalalal Lorem ipsum-3.png" />
+<img class="frame" src="img/frame 2.png" />
+<img class="close-up-of-brown" src="img/close-up-of-brown-wooden-planks-texture-high-resolution-background-image-photo 1.png" />
+<img class="clock-face-roman" src="img/clock-face-roman-numerals-digital-clock-clip-art-vintage-clock-5855de6ad6d7f02947d7a0329c3be503 1.png" />
+<img class="white-recycled-craft" src="img/white-recycled-craft-paper-texture-as-background-grey-paper-texture-old-vintage-page-or 1.png" />
+<img class="white-recycled-craft-2" src="img/white-recycled-craft-paper-texture-as-background-grey-paper-texture-old-vintage-page-or 3.png" />
+<img class="WORKS" src="img/WORKS.png" />
+<img class="fsdfffffffffffffff" src="img/fsdfffffffffffffff 1.png" />
+<img class="white-recycled-craft-3" src="img/white-recycled-craft-paper-texture-as-background-grey-paper-texture-old-vintage-page-or 2.png" />
+<img class="contact" src="img/Contact.png" />
+<img class="CONTACT-ME" src="img/CONTACT ME.png" />
+<img class="frame-2" src="img/frame 1.png" />
+<img class="img-6" src="img/Blalalalalalalal Lorem ipsum-3.png" />
+<img class="hero-2" src="img/Hero-2 1.png" /></div>
+</main>
+<script>
+  const root = document.documentElement;
+  const setDesktopScale = () => {
+    const availableWidth = document.documentElement.clientWidth;
+    const scale = Math.min(1, availableWidth / 1440);
+    root.style.setProperty('--desktop-scale', scale.toFixed(4));
+  };
+
+  window.addEventListener('resize', setDesktopScale, { passive: true });
+  setDesktopScale();
+
+  const revealableImages = [...document.querySelectorAll('.desktop img')];
+  let animationFrame;
+
+  const updateScrollFade = () => {
+    animationFrame = undefined;
+
+    revealableImages.forEach((image) => {
+      const bounds = image.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const fadeDistance = Math.max(120, viewportHeight * 0.28);
+      const distanceFromCenter = Math.abs(
+        bounds.top + (bounds.height / 2) - (viewportHeight / 2)
+      );
+      const visibility = Math.max(0, Math.min(1, 1 - distanceFromCenter / (viewportHeight / 2 + fadeDistance)));
+
+      image.classList.add('scroll-fade');
+      image.style.setProperty('--scroll-opacity', visibility.toFixed(3));
+      image.style.setProperty('--scroll-offset', `${((1 - visibility) * 45).toFixed(1)}px`);
+    });
+  };
+
+  const requestScrollFadeUpdate = () => {
+    if (!animationFrame) {
+      animationFrame = window.requestAnimationFrame(updateScrollFade);
+    }
+  };
+
+  window.addEventListener('scroll', requestScrollFadeUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollFadeUpdate, { passive: true });
+  updateScrollFade();
+</script>
+</body>
+</html>

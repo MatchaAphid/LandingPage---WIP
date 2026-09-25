@@ -1,0 +1,319 @@
+:root {
+  --desktop-scale: 1;
+}
+
+.canvas-shell {
+  width: 100%;
+  height: calc(5078px * var(--desktop-scale));
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.desktop {
+  background: linear-gradient(
+    180deg,
+    rgba(26, 31, 14, 1) 0%,
+    rgb(17, 17, 17) 60%,
+    rgba(42, 56, 32, 1) 100%
+  );
+  width: 1440px;
+  height: 5078px;
+  flex: 0 0 1440px;
+  position: relative;
+  transform-origin: top center;
+  transform: scale(var(--desktop-scale));
+}
+
+.desktop .scroll-fade {
+  opacity: var(--scroll-opacity, 0);
+  transform: translateY(var(--scroll-offset, 45px));
+  transition: opacity 900ms ease, transform 900ms ease;
+  will-change: opacity, transform;
+}
+
+.desktop .scroll-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.desktop .scroll-fade:nth-child(3n) {
+  transition-delay: 80ms;
+}
+
+.desktop .scroll-fade:nth-child(3n + 1) {
+  transition-delay: 140ms;
+}
+
+.desktop .rectangle {
+  position: absolute;
+  top: 689px;
+  left: 1049px;
+  width: 295px;
+  height: 233px;
+}
+
+.desktop .line {
+  position: absolute;
+  top: 427px;
+  left: 120px;
+  width: 1200px;
+  height: 3px;
+}
+
+.desktop .PREVIEW {
+  position: absolute;
+  top: 222px;
+  left: 583px;
+  width: 559px;
+  height: 109px;
+}
+
+.desktop .img {
+  position: absolute;
+  top: 147px;
+  left: 120px;
+  width: 630px;
+  height: 612px;
+}
+
+.desktop .img-2 {
+  position: absolute;
+  top: 354px;
+  left: 854px;
+  width: 194px;
+  height: 65px;
+}
+
+.desktop .line-2 {
+  position: absolute;
+  top: 0;
+  left: 580px;
+  width: 3px;
+  height: 344px;
+}
+
+.desktop .plant {
+  position: absolute;
+  top: 632px;
+  left: 0;
+  width: 1416px;
+  height: 606px;
+  aspect-ratio: 2.34;
+}
+
+.desktop .plant-2 {
+  position: absolute;
+  top: 951px;
+  left: 0;
+  width: 465px;
+  height: 1459px;
+  aspect-ratio: 0.4;
+}
+
+.desktop .hero {
+  position: absolute;
+  top: 193px;
+  left: 243px;
+  width: 833px;
+  height: 940px;
+  aspect-ratio: 0.92;
+}
+
+.desktop .about {
+  position: absolute;
+  top: 1100px;
+  left: 358px;
+  width: 597px;
+  height: 647px;
+}
+
+.desktop .smol {
+  position: absolute;
+  top: 1132px;
+  left: 943px;
+  width: 175px;
+  height: 191px;
+}
+
+.desktop .smol-2 {
+  position: absolute;
+  top: 1556px;
+  left: 192px;
+  width: 175px;
+  height: 191px;
+}
+
+.desktop .img-3 {
+  top: 1424px;
+  left: 914px;
+  position: absolute;
+  width: 323px;
+  height: 108px;
+}
+
+.desktop .img-4 {
+  top: 1220px;
+  left: 527px;
+  position: absolute;
+  width: 323px;
+  height: 108px;
+}
+
+.desktop .lorem-ipsuummm {
+  position: absolute;
+  top: 1152px;
+  left: 1141px;
+  width: 257px;
+  height: 30px;
+}
+
+.desktop .about-2 {
+  position: absolute;
+  top: 1997px;
+  left: 0;
+  width: 1440px;
+  height: 728px;
+}
+
+.desktop .ABOUT {
+  position: absolute;
+  top: 1900px;
+  left: 655px;
+  width: 711px;
+  height: 210px;
+}
+
+.desktop .rectangle-2 {
+  position: absolute;
+  top: 2084px;
+  left: 280px;
+  width: 941px;
+  height: 489px;
+}
+
+.desktop .img-5 {
+  top: 2232px;
+  left: 536px;
+  position: absolute;
+  width: 323px;
+  height: 108px;
+}
+
+.desktop .frame {
+  top: 1935px;
+  left: 0;
+  width: 453px;
+  height: 853px;
+  position: absolute;
+  aspect-ratio: 0.43;
+}
+
+.desktop .close-up-of-brown {
+  position: absolute;
+  top: 2954px;
+  left: 0;
+  width: 1440px;
+  height: 985px;
+  aspect-ratio: 1.83;
+  object-fit: cover;
+}
+
+.desktop .clock-face-roman {
+  position: absolute;
+  top: 2444px;
+  left: 792px;
+  width: 648px;
+  height: 1410px;
+  aspect-ratio: 0.93;
+}
+
+.desktop .white-recycled-craft {
+  position: absolute;
+  top: 2937px;
+  left: 884px;
+  width: 556px;
+  height: 872px;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+
+.desktop .white-recycled-craft-2 {
+  top: 3185px;
+  left: 784px;
+  width: 656px;
+  height: 682px;
+  position: absolute;
+  aspect-ratio: 1.5;
+}
+
+.desktop .WORKS {
+  position: absolute;
+  top: 3024px;
+  left: 176px;
+  width: 903px;
+  height: 251px;
+}
+
+.desktop .fsdfffffffffffffff {
+  position: absolute;
+  top: 3302px;
+  left: 53px;
+  width: 916px;
+  height: 478px;
+  aspect-ratio: 1.92;
+  object-fit: cover;
+}
+
+.desktop .white-recycled-craft-3 {
+  top: 3370px;
+  left: 898px;
+  width: 542px;
+  height: 737px;
+  object-fit: cover;
+  position: absolute;
+  aspect-ratio: 1.5;
+}
+
+.desktop .contact {
+  position: absolute;
+  top: 4059px;
+  left: 0;
+  width: 1440px;
+  height: 1019px;
+}
+
+.desktop .CONTACT-ME {
+  position: absolute;
+  top: 4168px;
+  left: 651px;
+  width: 708px;
+  height: 351px;
+}
+
+.desktop .frame-2 {
+  top: 1532px;
+  left: 495px;
+  width: 228px;
+  height: 536px;
+  position: absolute;
+  aspect-ratio: 0.43;
+}
+
+.desktop .img-6 {
+  top: 4618px;
+  left: 986px;
+  position: absolute;
+  width: 323px;
+  height: 108px;
+}
+
+.desktop .hero-2 {
+  position: absolute;
+  top: 4145px;
+  left: 0;
+  width: 687px;
+  height: 931px;
+  aspect-ratio: 0.74;
+}
